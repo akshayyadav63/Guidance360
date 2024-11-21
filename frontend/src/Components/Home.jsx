@@ -1,13 +1,14 @@
 
 import React from "react";
 import HeroSection from "../Components/HeroSection";
-import Work from "./Work";
+import Step from "./Step";
+
 
 const Home = () => {
   return (
     <div className="">
       <HeroSection />
-      <Work/>
+      <Step/>
     </div>
   );
 };
