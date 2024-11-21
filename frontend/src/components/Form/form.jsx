@@ -3,8 +3,8 @@ import React, { useState } from "react";
 const AcademicAssessmentForm = () => {
   const [formData, setFormData] = useState({
     name: "",
-    email: "",
-    phone: "",
+    gender:"",
+    age:"",
     education: "",
     mcqAnswers: {},
     writtenAnswer: "",
@@ -85,26 +85,26 @@ const AcademicAssessmentForm = () => {
           />
         </div>
         <div>
-          <label className="block font-medium">Email</label>
+          <label className="block font-medium">Gender</label>
           <input
-            type="email"
-            name="email"
-            value={formData.email}
+            type="text"
+            name="gender"
+            value={formData.gender}
             onChange={handleChange}
             className="w-full p-2 border rounded-md"
-            placeholder="Enter your email"
+            placeholder="Enter your gender"
             required
           />
         </div>
         <div>
-          <label className="block font-medium">Phone Number</label>
+          <label className="block font-medium">Age</label>
           <input
-            type="tel"
-            name="phone"
-            value={formData.phone}
+            type="number"
+            name="age"
+            value={formData.age}
             onChange={handleChange}
             className="w-full p-2 border rounded-md"
-            placeholder="Enter your phone number"
+            placeholder="Enter your age"
             required
           />
         </div>
@@ -160,14 +160,14 @@ const AcademicAssessmentForm = () => {
 
         {/* Skills Input Section */}
         <div>
-          <label className="block font-medium">Skills</label>
+          <label className="block font-medium">Academic Subjects</label>
           <div className="flex mb-2">
             <input
               type="text"
               value={formData.newSkill}
               onChange={handleSkillChange}
               className="w-full p-2 border rounded-md"
-              placeholder="Enter a skill"
+              placeholder="Enter a  subject"
             />
             <button
               type="button"

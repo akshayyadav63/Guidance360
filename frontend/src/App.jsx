@@ -1,23 +1,13 @@
-<<<<<<< HEAD
-import { useState } from 'react'
-import AcademicAssessmentForm from './components/Form/form'
-=======
+ 
 // App.js
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./Components/Navbar";
 import Home from "./Components/Home";
-
->>>>>>> bb162f0fd46452cc87e332e85ec86731803ec8a3
+import AcademicAssessmentForm from './components/Form/form'
 
 function App() {
   return (
-<<<<<<< HEAD
-    <div>
-     
-    </div>
-  )
-=======
     <Router>
       <Navbar />
       <Routes>
@@ -29,7 +19,7 @@ function App() {
       </Routes>
     </Router>
   );
->>>>>>> bb162f0fd46452cc87e332e85ec86731803ec8a3
+ 
 }
 
 export default App;
