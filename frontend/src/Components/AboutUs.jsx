@@ -12,7 +12,7 @@ const AboutUs = () => {
       <div className='container flex flex-col px-4 mx-auto mt-10 space-y-12 md:space-y-0 md:flex-row -mb-32'>
         {/* What's Different */}
         <div className='flex flex-col mb-32 space-y-12 ml-28 md:w-1/2 gap-1'>
-          <h2 className='max-w-md text-6xl font-bold text-center md:text-left'>
+          <h2 className='max-w-md text-6xl font-bold text-center md:text-left text-purple-600'>
           Our Vision:
           </h2>
           <p className=' text-center text-darkGrayishBlue md:text-left'>
@@ -26,7 +26,7 @@ const AboutUs = () => {
             {/* Heading */}
             <div className='rounded-l-full bg-brightRedSupLight md:bg-transparent'>
               <div className='flex items-center space-x-2'>
-                <div className='px-4 py-2 text-black rounded-full md:py-1 bg-brightRed'>
+                <div className='px-4 py-2 text-purple-600 rounded-full md:py-1 bg-brightRed'>
                 <i class="fa fa-circle" aria-hidden="true"></i>
                 </div>
                 <h3 className='text-base font-bold md:mb-4 md:hidden'>
@@ -36,7 +36,7 @@ const AboutUs = () => {
             </div>
 
             <div>
-              <h3 className='hidden mb-4 text-lg font-bold md:block'>
+              <h3 className='hidden mb-4 text-lg font-bold md:block text-purple-600'>
               Who We Are:
               </h3>
               <p className='text-darkGrayishBlue'>
@@ -50,17 +50,17 @@ const AboutUs = () => {
             {/* Heading */}
             <div className='rounded-l-full bg-brightRedSupLight md:bg-transparent'>
               <div className='flex items-center space-x-2'>
-                <div className='px-4 py-2 text-black rounded-full md:py-1 bg-brightRed'>
+                <div className='px-4 py-2 text-purple-600 rounded-full md:py-1 bg-brightRed'>
                 <i class="fa fa-circle" aria-hidden="true"></i>
                 </div>
-                <h3 className='text-base font-bold md:mb-4 md:hidden'>
+                <h3 className='text-base font-bold md:mb-4 md:hidden text-purple-600'>
                   Our Mission
                 </h3>
               </div>
             </div>
 
             <div>
-              <h3 className='hidden mb-4 text-lg font-bold md:block'>
+              <h3 className='hidden mb-4 text-lg font-bold md:block text-purple-600'>
                 What we do:
               </h3>
               <p className='text-darkGrayishBlue'>
@@ -93,7 +93,7 @@ const AboutUs = () => {
       
      <div className='max-w-6xl px-5 mx-auto mt-32 text-center'>
        
-         <h2 className='text-4xl font-bold text-center'>
+         <h2 className='text-4xl font-bold text-center text-purple-600'>
            Our Team
          </h2>
        
