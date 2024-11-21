@@ -12,6 +12,7 @@ import AboutUs from "./Components/AboutUs";
 import AcademicAssessmentForm from './Components/Form/form'; // Ensure the path is correct
 import Form from './Components/Form/form'
 import Quiz from './components/career/careerQuestion'
+import ContactUs from "./Components/ContactUs";
 
 function App() {
   return (
@@ -22,7 +23,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/services" element={<h1>Services Page</h1>} />
           <Route path="/about" element={<AboutUs />} />
-          <Route path="/contact" element={<h1>Contact Us Page</h1>} />
+          <Route path="/contact" element={<ContactUs/>} />
           <Route path="/form" element={<AcademicAssessmentForm />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/login" element={<Login />} />
