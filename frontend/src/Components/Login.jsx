@@ -44,24 +44,30 @@ export default function Login() {
 
           {/* Email Input */}
           <div className="relative mb-6">
+            <span className="absolute left-3 top-1/2 transform -translate-y-1/2 text-lg text-gray-500">
+              <i className="fa fa-envelope"></i>
+            </span>
             <input
               type="email"
               placeholder="Email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className="w-full h-10 px-4 py-2 border-b border-gray-300 focus:border-purple-500 focus:outline-none"
+              className="w-full h-10 pl-10 px-4 py-2 border-b border-gray-300 focus:border-purple-500 focus:outline-none"
               required
             />
           </div>
 
           {/* Password Input */}
           <div className="relative mb-6">
+            <span className="absolute left-3 top-1/2 transform -translate-y-1/2 text-lg text-gray-500">
+              <i className="fa fa-lock"></i>
+            </span>
             <input
               type="password"
               placeholder="Password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              className="w-full h-10 px-4 py-2 border-b border-gray-300 focus:border-purple-500 focus:outline-none"
+              className="w-full h-10 pl-10 px-4 py-2 border-b border-gray-300 focus:border-purple-500 focus:outline-none"
               required
             />
           </div>
@@ -69,7 +75,7 @@ export default function Login() {
           {/* Submit Button */}
           <button
             type="submit"
-            className="w-full h-12 bg-blue-500 text-white uppercase font-semibold hover:bg-blue-600 transition-all"
+            className="w-full h-12 bg-gray-500 text-white uppercase font-semibold hover:bg-gray-600 transition-all"
           >
             Login
           </button>

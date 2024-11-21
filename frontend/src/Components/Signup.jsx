@@ -49,7 +49,6 @@ export default function Signup() {
         <div className="min-h-screen flex items-center justify-center">
             <div className="relative w-96">
                 <img src={Image1} alt="" className="absolute bottom-[-12px] left-[-305px] z-10 max-w-full" />
-
                 <form className="w-full relative z-20 p-12 bg-white shadow-lg" onSubmit={handleSubmit}>
                     <h2 className="text-3xl font-semibold text-center mb-8 uppercase tracking-wider">Sign Up</h2>
 
