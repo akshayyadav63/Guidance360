@@ -1,6 +1,5 @@
 import React, { useState } from "react";
-import Robo from "/Users/Anushka Mishra/Documents/GitHub/miniProject/Innovative_Incubators/frontend/src/assets/images/Login_Robo.gif";
-
+import Robo from "../../assets/images/Login_Robo.gif";
 const AcademicAssessmentForm = () => {
   const [formData, setFormData] = useState({
     name: "",
