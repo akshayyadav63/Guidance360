@@ -55,31 +55,33 @@ export default function Signup() {
                     {error && <p className="text-red-500 text-center">{error}</p>}
                     {success && <p className="text-green-500 text-center">{success}</p>}
 
-                    {/* Name Input */}
-                    <div className="relative mb-5">
-                        <input
-                            type="text"
-                            name="name"
-                            value={formData.name}
-                            onChange={handleChange}
-                            className="w-full h-10 pl-12 border-b border-gray-300 focus:outline-none focus:border-purple-500"
-                            placeholder="Name"
-                            required
-                        />
-                    </div>
+          {/* Name Input */}
+          <div className="relative mb-5">
+            <span className="absolute left-0 top-1/2 transform -translate-y-1/2 text-lg text-gray-500">
+            <i className="fa fa-user"></i>
 
-                    {/* Email Input */}
-                    <div className="relative mb-5">
-                        <input
-                            type="email"
-                            name="email"
-                            value={formData.email}
-                            onChange={handleChange}
-                            className="w-full h-10 pl-12 border-b border-gray-300 focus:outline-none focus:border-purple-500"
-                            placeholder="Email"
-                            required
-                        />
-                    </div>
+            </span>
+            <input
+              type="text"
+              className="w-full h-10 pl-12 border-b border-gray-300 focus:outline-none focus:border-purple-500"
+              placeholder="Name"
+              required
+            />
+          </div>
+
+          {/* Email Input */}
+          <div className="relative mb-5">
+            <span className="absolute left-0 top-1/2 transform -translate-y-1/2 text-lg text-gray-500">
+            <i className="fa fa-envelope"></i>
+
+            </span>
+            <input
+              type="email"
+              className="w-full h-10 pl-12 border-b border-gray-300 focus:outline-none focus:border-purple-500 "
+              placeholder="Email"
+              required
+            />
+          </div>
 
                     {/* Password Input */}
                     <div className="relative mb-5">
