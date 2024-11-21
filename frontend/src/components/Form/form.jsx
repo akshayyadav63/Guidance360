@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Robo from "/Users/Anushka Mishra/Documents/GitHub/miniProject/Innovative_Incubators/frontend/src/assets/images/Login_Robo.gif";
+
 
 const AcademicAssessmentForm = () => {
   const [formData, setFormData] = useState({
@@ -72,12 +72,7 @@ const AcademicAssessmentForm = () => {
 
   return (
     <>
-      <img
-        src={Robo}
-        alt="Robo"
-        className="absolute bottom-96 left-36 w-40 h-auto"
-      />
-    <div className="p-8 max-w-4xl mx-auto bg-purple-900 text-white rounded-lg shadow-xl relative">
+    <div className="p-8 max-w-4xl mx-auto bg-purple-600 text-white rounded-lg shadow-xl relative mt-10">
       
       <h1 className="text-3xl font-bold mb-6 text-center animate-bounce">
         Academic Assessment Form
