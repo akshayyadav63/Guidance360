@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { UserContext} from "./UserContext";
+import { UserContext } from "./UserContext";
 
 const Navbar = () => {
   const { userEmail, setUserEmail } = useContext(UserContext);
@@ -15,28 +15,31 @@ const Navbar = () => {
   return (
     <nav className="bg-purple-600 text-white px-6 py-4 flex justify-between items-center">
       <h1 className="text-2xl font-bold">Innovative Incubators</h1>
-      <ul className="flex space-x-6">
-        <li>
-          <Link to="/" className="hover:text-yellow-300">
-            Home
-          </Link>
-        </li>
-        <li>
-          <Link to="/services" className="hover:text-yellow-300">
-            Services
-          </Link>
-        </li>
-        <li>
-          <Link to="/about" className="hover:text-yellow-300">
-            About Us
-          </Link>
-        </li>
-        <li>
-          <Link to="/contact" className="hover:text-yellow-300">
-            Contact Us
-          </Link>
-        </li>
-      </ul>
+
+      {!userEmail && (
+        <ul className="flex space-x-6">
+          <li>
+            <Link to="/" className="hover:text-yellow-300">
+              Home
+            </Link>
+          </li>
+          <li>
+            <Link to="/services" className="hover:text-yellow-300">
+              Services
+            </Link>
+          </li>
+          <li>
+            <Link to="/about" className="hover:text-yellow-300">
+              About Us
+            </Link>
+          </li>
+          <li>
+            <Link to="/contact" className="hover:text-yellow-300">
+              Contact Us
+            </Link>
+          </li>
+        </ul>
+      )}
 
       {userEmail ? (
         <div className="flex items-center space-x-4">
