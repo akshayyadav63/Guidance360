@@ -1,6 +1,8 @@
 // App.js
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import 'font-awesome/css/font-awesome.min.css';
+
 import Navbar from "./Components/Navbar";
 import Home from "./Components/Home";
 import Signup from "./Components/Signup";

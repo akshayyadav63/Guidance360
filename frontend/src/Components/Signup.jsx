@@ -18,7 +18,8 @@ export default function Signup() {
           {/* Name Input */}
           <div className="relative mb-5">
             <span className="absolute left-0 top-1/2 transform -translate-y-1/2 text-lg text-gray-500">
-              <i className="fa-regular fa-user"></i>
+            <i className="fa fa-user"></i>
+
             </span>
             <input
               type="text"
@@ -31,11 +32,12 @@ export default function Signup() {
           {/* Email Input */}
           <div className="relative mb-5">
             <span className="absolute left-0 top-1/2 transform -translate-y-1/2 text-lg text-gray-500">
-              <i className="fa-regular fa-envelope"></i>
+            <i className="fa fa-envelope"></i>
+
             </span>
             <input
               type="email"
-              className="w-full h-10 pl-12 border-b border-gray-300 focus:outline-none focus:border-purple-500"
+              className="w-full h-10 pl-12 border-b border-gray-300 focus:outline-none focus:border-purple-500 "
               placeholder="Email"
               required
             />
@@ -44,11 +46,12 @@ export default function Signup() {
           {/* Password Input */}
           <div className="relative mb-5">
             <span className="absolute left-0 top-1/2 transform -translate-y-1/2 text-lg text-gray-500">
-              <i className="fa-solid fa-lock"></i>
+            <i className="fa fa-lock"></i>
+
             </span>
             <input
               type="password"
-              className="w-full h-10 pl-12 border-b border-gray-300 focus:outline-none focus:border-purple-500"
+              className="w-full h-10 pl-12 border-b border-gray-300 focus:outline-none focus:border-purple-500 "
               placeholder="Password"
               minLength="8"
               required
@@ -58,7 +61,8 @@ export default function Signup() {
           {/* Confirm Password Input */}
           <div className="relative mb-8">
             <span className="absolute left-0 top-1/2 transform -translate-y-1/2 text-lg text-gray-500">
-              <i className="fa-solid fa-lock"></i>
+            <i className="fa fa-lock"></i>
+
             </span>
             <input
               type="password"
@@ -77,7 +81,7 @@ export default function Signup() {
 
           <p className="text-center mt-6 text-lg">
             Already have an account?
-            <Link to="/login" className="text-blue-600 ml-2">Login</Link>
+            <Link to="/login" className="text-blue-500 ml-2">Login</Link>
           </p>
         </form>
 
