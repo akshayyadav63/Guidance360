@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 // components/HeroSection.jsx
 import React from "react";
 import { Link } from "react-router-dom";
