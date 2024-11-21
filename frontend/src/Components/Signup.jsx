@@ -72,7 +72,7 @@ export default function Signup() {
             type="button"
             className="w-full h-12 bg-gray-500 text-white uppercase font-semibold text-lg tracking-wide transition duration-300 hover:bg-gray-600"
           >
-            Sign Up (Disabled)
+            Sign Up 
           </button>
 
           <p className="text-center mt-6 text-lg">
