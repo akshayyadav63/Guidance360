@@ -35,7 +35,7 @@ export default function Signup() {
             </span>
             <input
               type="email"
-              className="w-full h-10 pl-12 border-b border-gray-300 focus:outline-none focus:border-purple-500 "
+              className="w-full h-10 pl-12 border-b border-gray-300 focus:outline-none focus:border-purple-500"
               placeholder="Email"
               required
             />
