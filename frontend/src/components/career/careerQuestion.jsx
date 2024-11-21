@@ -1940,18 +1940,7 @@ const App = () => {
     }, [showResult, scores, totalScore]);
   
     return (
-      <div className="min-h-screen bg-gradient-to-r from-blue-100 to-indigo-200 flex flex-col items-center">
-        <header className="bg-white shadow-md w-full p-4 fixed top-0">
-          <nav className="flex justify-between items-center max-w-4xl mx-auto">
-            <a href="/" className="flex items-center space-x-3">
-              <img src="/img/logo.png" alt="Logo" className="h-10" />
-              <span className="text-xl font-semibold text-gray-800">AI Guruji</span>
-            </a>
-            <button className="bg-indigo-500 text-white px-4 py-2 rounded-lg hover:bg-indigo-600">
-              Sign In
-            </button>
-          </nav>
-        </header>
+      <div className="min-h-screen flex flex-col items-center">
   
         <main className="flex flex-col items-center mt-28 w-full px-4">
           <motion.h1
