@@ -10,6 +10,7 @@ import Signup from "./Components/Signup";
 import Login from "./Components/Login";
 import AboutUs from "./Components/AboutUs";
 import AcademicAssessmentForm from './components/Form/form'; // Ensure the path is correct
+import Form from './components/Form/form'
 import Quiz from './components/career/careerQuestion'
 
 function App() {

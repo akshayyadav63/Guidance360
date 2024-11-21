@@ -1,17 +1,18 @@
 import React, { useState } from "react";
+import Robo from "/Users/Anushka Mishra/Documents/GitHub/miniProject/Innovative_Incubators/frontend/src/assets/images/Login_Robo.gif";
 
 const AcademicAssessmentForm = () => {
   const [formData, setFormData] = useState({
     name: "",
-    gender:"",
-    age:"",
+    gender: "",
+    age: "",
     education: "",
     mcqAnswers: {},
     writtenAnswer: "",
-    skills: [],  
-    newSkill: "",  
-    extracurricular: [],  
-    newExtracurricular: "",  
+    skills: [],
+    newSkill: "",
+    extracurricular: [],
+    newExtracurricular: "",
   });
 
   const handleChange = (e) => {
@@ -32,7 +33,7 @@ const AcademicAssessmentForm = () => {
       setFormData({
         ...formData,
         skills: [...formData.skills, formData.newSkill],
-        newSkill: "", // Clear input after adding
+        newSkill: "",
       });
     }
   };
@@ -42,7 +43,7 @@ const AcademicAssessmentForm = () => {
       setFormData({
         ...formData,
         extracurricular: [...formData.extracurricular, formData.newExtracurricular],
-        newExtracurricular: "", // Clear input after adding
+        newExtracurricular: "",
       });
     }
   };
@@ -50,14 +51,16 @@ const AcademicAssessmentForm = () => {
   const removeSkill = (skillToRemove) => {
     setFormData({
       ...formData,
-      skills: formData.skills.filter(skill => skill !== skillToRemove),
+      skills: formData.skills.filter((skill) => skill !== skillToRemove),
     });
   };
 
   const removeExtracurricular = (activityToRemove) => {
     setFormData({
       ...formData,
-      extracurricular: formData.extracurricular.filter(activity => activity !== activityToRemove),
+      extracurricular: formData.extracurricular.filter(
+        (activity) => activity !== activityToRemove
+      ),
     });
   };
 
@@ -68,9 +71,18 @@ const AcademicAssessmentForm = () => {
   };
 
   return (
-    <div className="p-8 max-w-4xl mx-auto bg-gray-100 rounded-md shadow-lg">
-      <h1 className="text-2xl font-bold mb-4 text-center">Academic Assessment Form</h1>
-      <form onSubmit={handleSubmit} className="space-y-6">
+    <>
+      <img
+        src={Robo}
+        alt="Robo"
+        className="absolute bottom-96 left-36 w-40 h-auto"
+      />
+    <div className="p-8 max-w-4xl mx-auto bg-purple-900 text-white rounded-lg shadow-xl relative">
+      
+      <h1 className="text-3xl font-bold mb-6 text-center animate-bounce">
+        Academic Assessment Form
+      </h1>
+      <form onSubmit={handleSubmit} className="space-y-8">
         {/* Personal Information */}
         <div>
           <label className="block font-medium">Full Name</label>
@@ -79,7 +91,7 @@ const AcademicAssessmentForm = () => {
             name="name"
             value={formData.name}
             onChange={handleChange}
-            className="w-full p-2 border rounded-md"
+            className="w-full p-3 border rounded-lg text-gray-800"
             placeholder="Enter your name"
             required
           />
@@ -91,7 +103,7 @@ const AcademicAssessmentForm = () => {
             name="gender"
             value={formData.gender}
             onChange={handleChange}
-            className="w-full p-2 border rounded-md"
+            className="w-full p-3 border rounded-lg text-gray-800"
             placeholder="Enter your gender"
             required
           />
@@ -103,7 +115,7 @@ const AcademicAssessmentForm = () => {
             name="age"
             value={formData.age}
             onChange={handleChange}
-            className="w-full p-2 border rounded-md"
+            className="w-full p-3 border rounded-lg text-gray-800"
             placeholder="Enter your age"
             required
           />
@@ -114,7 +126,7 @@ const AcademicAssessmentForm = () => {
             name="education"
             value={formData.education}
             onChange={handleChange}
-            className="w-full p-2 border rounded-md"
+            className="w-full p-3 border rounded-lg text-gray-800"
             required
           >
             <option value="">Select Education Level</option>
@@ -131,25 +143,25 @@ const AcademicAssessmentForm = () => {
               type="text"
               value={formData.newExtracurricular}
               onChange={handleCurricularChange}
-              className="w-full p-2 border rounded-md"
+              className="w-full p-3 border rounded-lg text-gray-800"
               placeholder="Enter an activity"
             />
             <button
               type="button"
               onClick={addExtracurricular}
-              className="ml-2 bg-green-600 text-white p-2 rounded-md"
+              className="ml-2 bg-green-500 text-white p-3 rounded-lg hover:bg-green-600 transition"
             >
               Add
             </button>
           </div>
           <ul className="list-disc pl-5">
             {formData.extracurricular.map((activity, index) => (
-              <li key={index} className="flex justify-between">
+              <li key={index} className="flex justify-between items-center">
                 {activity}
                 <button
                   type="button"
                   onClick={() => removeExtracurricular(activity)}
-                  className="ml-2 text-red-600"
+                  className="ml-2 bg-red-500 text-white p-2 rounded-lg hover:bg-red-600 transition"
                 >
                   Remove
                 </button>
@@ -166,25 +178,25 @@ const AcademicAssessmentForm = () => {
               type="text"
               value={formData.newSkill}
               onChange={handleSkillChange}
-              className="w-full p-2 border rounded-md"
-              placeholder="Enter a  subject"
+              className="w-full p-3 border rounded-lg text-gray-800"
+              placeholder="Enter a subject"
             />
             <button
               type="button"
               onClick={addSkill}
-              className="ml-2 bg-green-600 text-white p-2 rounded-md"
+              className="ml-2 bg-green-500 text-white p-3 rounded-lg hover:bg-green-600 transition"
             >
               Add
             </button>
           </div>
           <ul className="list-disc pl-5">
             {formData.skills.map((skill, index) => (
-              <li key={index} className="flex justify-between">
+              <li key={index} className="flex justify-between items-center">
                 {skill}
                 <button
                   type="button"
                   onClick={() => removeSkill(skill)}
-                  className="ml-2 text-red-600"
+                  className="ml-2 bg-red-500 text-white p-2 rounded-lg hover:bg-red-600 transition"
                 >
                   Remove
                 </button>
@@ -196,12 +208,16 @@ const AcademicAssessmentForm = () => {
         {/* Submit Button */}
         <button
           type="submit"
-          className="w-full bg-blue-600 text-white p-3 rounded-md hover:bg-blue-700"
+          className="w-full bg-purple-800 text-white p-3 rounded-lg hover:bg-purple-700 transition"
         >
           Submit
         </button>
       </form>
+
+      {/* Robot Image */}
+    
     </div>
+    </>
   );
 };
 
