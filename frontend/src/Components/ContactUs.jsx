@@ -1,6 +1,6 @@
-/* eslint-disable no-unused-vars */
 import React, { useState } from 'react';
 import { FaPhoneAlt, FaEnvelope } from 'react-icons/fa';
+import { FaComments } from 'react-icons/fa'; // Import chat bubble icon
 
 const ContactUs = () => {
   const [formData, setFormData] = useState({
@@ -9,6 +9,8 @@ const ContactUs = () => {
     subject: '',
     message: '',
   });
+
+  const [chatOpen, setChatOpen] = useState(false); // State to toggle chatbot visibility
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -22,6 +24,10 @@ const ContactUs = () => {
     e.preventDefault();
     // Handle form submission logic (e.g., send data to a server or email)
     console.log('Form Submitted:', formData);
+  };
+
+  const toggleChat = () => {
+    setChatOpen(!chatOpen);
   };
 
   return (
@@ -107,6 +113,38 @@ const ContactUs = () => {
           </div>
         </div>
       </div>
+
+      {/* Chatbot Button */}
+      <button
+        onClick={toggleChat}
+        className="fixed bottom-5 right-5 bg-indigo-600 p-4 rounded-full text-white shadow-lg z-50 hover:scale-105 transition-transform duration-300"
+      >
+        <FaComments className="text-2xl" />
+      </button>
+
+      {/* Chatbot Sidebar */}
+      {chatOpen && (
+        <div className="chatbot-sidebar fixed right-1 bottom-5 w-90 h-96 bg-indigo-700 text-white p-3 rounded-tl-3xl shadow-lg z-40">
+          <div className="flex justify-between items-center mb-4">
+            <h2 className="text-xl">Chat with Us</h2>
+            <button
+              onClick={toggleChat}
+              className="text-white text-2xl hover:text-indigo-300"
+            >
+              X
+            </button>
+          </div>
+
+          {/* Embed Iframe of Chatbot */}
+          <iframe
+            src="http://localhost:8000"  // Update this with the correct URL of your chatbot backend
+            width="100%"
+            height="85%"
+            frameBorder="0"
+            title="Chatbot"
+          ></iframe>
+        </div>
+      )}
     </div>
   );
 };
