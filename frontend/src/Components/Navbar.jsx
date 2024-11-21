@@ -13,7 +13,11 @@ const Navbar = () => {
         <li><Link to="/contact" className="hover:text-yellow-300">Contact Us</Link></li>
       </ul>
      
-      <button className="bg-yellow-400 px-4 py-2 rounded hover:bg-yellow-500">Login</button>
+      <button className="bg-yellow-400 px-4 py-2 rounded hover:bg-yellow-500">
+  <Link to="/login" className="text-white">
+    Login
+  </Link>
+</button>
      
     </nav>
   );

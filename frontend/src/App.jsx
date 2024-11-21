@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./Components/Navbar";
 import Home from "./Components/Home";
 import Signup from "./Components/Signup";
+import Login from "./Components/Login";
 import AcademicAssessmentForm from './components/Form/form'; // Ensure the path is correct
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
         {/* Example of adding another route */}
         <Route path="/form" element={<AcademicAssessmentForm />} />
         <Route path="/signup" element={<Signup />} />
+        <Route path="/login" element={<Login />} />
       </Routes>
     </Router>
   );
