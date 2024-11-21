@@ -1,6 +1,4 @@
 import React, { useState } from "react";
-
-
 const AcademicAssessmentForm = () => {
   const [formData, setFormData] = useState({
     name: "",
