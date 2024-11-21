@@ -1,4 +1,6 @@
+/* eslint-disable no-unused-vars */
 import { useState } from 'react'
+import Signup from "./Components/Signup.jsx";
 
 
 function App() {
@@ -6,7 +8,7 @@ function App() {
 
   return (
     <div>
-      <h1 className='bg-red-800'>Innovative Incubators</h1>
+   
     </div>
   )
 }
