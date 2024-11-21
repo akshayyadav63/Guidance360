@@ -1,10 +1,12 @@
 /* eslint-disable no-unused-vars */
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import Robo from "../assets/images/Login_Robo.gif";
+import { UserContext } from "./UserContext";
 
 export default function Login() {
+  const { setUserEmail } = useContext(UserContext); // Access the UserContext to set the user email
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
@@ -23,6 +25,10 @@ export default function Login() {
       setSuccess(response.data.message);
       setError("");
       console.log("User Info:", response.data.name); // Use this for further state updates
+      
+      // Save the email in localStorage and update UserContext
+      localStorage.setItem("userEmail", email);
+      setUserEmail(email); // Update the context with the logged-in user's email
 
       // Redirect to Form.jsx
       navigate("/form");
