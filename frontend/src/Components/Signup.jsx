@@ -1,10 +1,13 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import Image1 from "../assets/images/Signup_Image1.png";
 import Robo from "../assets/images/Signup_Robo.png";
 
 export default function Signup() {
+
+    const navigate = useNavigate();
+
     const [formData, setFormData] = useState({
         name: "",
         email: "",
@@ -38,7 +41,9 @@ export default function Signup() {
             });
 
             setSuccess(response.data.message);
+            navigate("/login");
             setError("");
+
         } catch (err) {
             setError(err.response?.data?.error || "An error occurred!");
             setSuccess("");
