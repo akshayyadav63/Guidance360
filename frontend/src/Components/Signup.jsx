@@ -15,7 +15,6 @@ export default function Signup() {
         <form className="w-full relative z-20 p-12 bg-white shadow-lg">
           <h2 className="text-3xl font-semibold text-center mb-8 uppercase tracking-wider">Sign Up</h2>
 
-          {/* Name Input */}
           <div className="relative mb-5">
             <span className="absolute left-0 top-1/2 transform -translate-y-1/2 text-lg text-gray-500">
               <i className="fa-regular fa-user"></i>
@@ -27,8 +26,7 @@ export default function Signup() {
               required
             />
           </div>
-
-          {/* Email Input */}
+ 
           <div className="relative mb-5">
             <span className="absolute left-0 top-1/2 transform -translate-y-1/2 text-lg text-gray-500">
               <i className="fa-regular fa-envelope"></i>
