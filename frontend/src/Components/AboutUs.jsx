@@ -71,7 +71,7 @@ const AboutUs = () => {
           {/* List Item 3 */}
           <div className='flex flex-col space-y-3 md:space-y-0 md:space-x-6 md:flex-row'>
             {/* Heading */}
-            <div className='rounded-l-full bg-brightRedSupLight md:bg-transparent'>
+            {/* <div className='rounded-l-full bg-brightRedSupLight md:bg-transparent'>
               <div className='flex items-center space-x-2'>
                 <div className='px-4 py-2 text-black rounded-full md:py-1 bg-brightRed'>
                 <i class="fa fa-circle" aria-hidden="true"></i>
@@ -80,7 +80,7 @@ const AboutUs = () => {
                   Everything you need in one place
                 </h3>
               </div>
-            </div>
+            </div> */}
 
             
           </div>
