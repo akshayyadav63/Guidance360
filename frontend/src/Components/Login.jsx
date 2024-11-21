@@ -1,21 +1,34 @@
 /* eslint-disable no-unused-vars */
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import axios from "axios";
 import Robo from "../assets/images/Login_Robo.gif";
 
 export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [error, setError] = useState(false);
+  const [error, setError] = useState("");
+  const [success, setSuccess] = useState("");
+  const navigate = useNavigate(); // Hook for navigation
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    // Simulate form submission logic
-    if (email && password) {
-      console.log("Form Submitted", { email, password });
-      // Navigate or take any other action
-    } else {
-      setError(true);
+
+    try {
+      const response = await axios.post("http://127.0.0.1:5000/login", {
+        email,
+        password,
+      });
+
+      setSuccess(response.data.message);
+      setError("");
+      console.log("User Info:", response.data.name); // Use this for further state updates
+
+      // Redirect to Form.jsx
+      navigate("/form");
+    } catch (err) {
+      setError(err.response?.data?.error || "An error occurred!");
+      setSuccess("");
     }
   };
 
@@ -29,7 +42,7 @@ export default function Login() {
         />
         <form onSubmit={handleSubmit} className="space-y-6">
           <h2 className="text-center text-4xl font-bold mb-8">Login</h2>
-          
+
           {/* Email Input */}
           <div className="relative mb-6">
             <span className="absolute left-3 top-1/2 transform -translate-y-1/2 text-lg text-gray-500">
@@ -68,12 +81,15 @@ export default function Login() {
             Login
           </button>
 
-          {/* Error Message */}
-          {error && <div className="text-red-500 text-center mt-4">Login Failed</div>}
+          {/* Success and Error Messages */}
+          {success && <div className="text-green-500 text-center mt-4">{success}</div>}
+          {error && <div className="text-red-500 text-center mt-4">{error}</div>}
 
           <p className="text-center text-gray-600 mt-6">
             Not a member?{" "}
-            <Link to="/signup" className="text-blue-500">Signup</Link>
+            <Link to="/signup" className="text-blue-500">
+              Signup
+            </Link>
           </p>
         </form>
       </div>
