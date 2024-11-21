@@ -5,7 +5,7 @@ import 'font-awesome/css/font-awesome.min.css';
 
 import Navbar from "./Components/Navbar";
 import Home from "./Components/Home";
-import Signup from "./Components/Signup";
+import Signup from "./components/Signup";
 import Login from "./Components/Login";
 import AboutUs from "./Components/AboutUs";
 import AcademicAssessmentForm from './components/Form/form'; // Ensure the path is correct
