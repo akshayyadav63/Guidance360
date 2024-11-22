@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { FaPhoneAlt, FaEnvelope } from 'react-icons/fa';
+import Bot from '../assets/images/CareerGPT_Bot.gif'; // Import the bot image
 import { FaComments } from 'react-icons/fa'; // Import chat bubble icon
 
 const ContactUs = () => {
@@ -114,13 +115,13 @@ const ContactUs = () => {
         </div>
       </div>
 
-      {/* Chatbot Button */}
-      <button
+      {/* Chatbot Image */}
+      <img
+        src={Bot} // Using the Bot image imported above
+        alt="Chatbot"
         onClick={toggleChat}
-        className="fixed bottom-5 right-5 bg-indigo-600 p-4 rounded-full text-white shadow-lg z-50 hover:scale-105 transition-transform duration-300"
-      >
-        <FaComments className="text-2xl" />
-      </button>
+        className="fixed bottom-5 right-5 w-20 h-20 cursor-pointer hover:scale-105 transition-transform duration-300 z-50"
+      />
 
       {/* Chatbot Sidebar */}
       {chatOpen && (
