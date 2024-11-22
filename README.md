@@ -53,9 +53,9 @@ Certified courses to help you upskill effectively.
 
 ## 📦 Tech Stack
 **1. Frontend: React, Tailwind CSS, Chart.js**
-**Backend: Python,Flask**
-**Database: MongoDB**
-**API key: Gemini api key**
+**2. Backend: Python,Flask**
+**3. Database: MongoDB**
+**4. API key: Gemini api key**
 
 
 ## **🛠️ How to Run the Project**
@@ -64,8 +64,6 @@ Certified courses to help you upskill effectively.
 1. Open the terminal and navigate to the `frontend` folder:  
    ```bash
    cd frontend
-   and run 
-   ```bash
    npm i
 ### **Backend**  
 1. Open the terminal and navigate to the `backend` folder and run:  
