@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Footer from "../Footer";
+import Footer from "../Footer"; // Removed conflict markers
 
 const AcademicAssessmentForm = () => {
   const [formData, setFormData] = useState({
@@ -77,19 +77,14 @@ const AcademicAssessmentForm = () => {
     <>
       <div className="bg-gray-100 min-h-screen flex items-center justify-center mb-10">
         <div className="w-full max-w-[60rem]">
-          {/* New Heading */}
           <h1 className="text-3xl font-bold text-center text-purple-600 mb-8 mt-5">
-          "Step into your future! Fill out this form to unlock your academic journey and achieve your dreams."
-
-
+            "Step into your future! Fill out this form to unlock your academic journey and achieve your dreams."
           </h1>
-
-          <div className="bg-white p-6 rounded-3xl shadow-lg w-full mt-10 bg-purple-200 max-w-[60rem] border-8 border-purple-700 shadow-purple-400/50">
-            <h1 className="text-4xl mb-6 text-center animate-bounce">
+          <div className="p-8 max-w-4xl mx-auto bg-purple-600 text-white rounded-lg shadow-xl relative mt-10">
+            <h1 className="text-3xl font-bold mb-6 text-center animate-bounce">
               Academic Assessment Form
             </h1>
             <form onSubmit={handleSubmit} className="space-y-8">
-              {/* Personal Information */}
               <div>
                 <label className="block font-medium">Full Name</label>
                 <input
@@ -143,9 +138,7 @@ const AcademicAssessmentForm = () => {
 
               {/* Extracurricular Activities */}
               <div>
-                <label className="block font-medium">
-                  Extracurricular Activities
-                </label>
+                <label className="block font-medium">Extracurricular Activities</label>
                 <div className="flex mb-2">
                   <input
                     type="text"
@@ -164,10 +157,7 @@ const AcademicAssessmentForm = () => {
                 </div>
                 <ul className="list-disc pl-5">
                   {formData.extracurricular.map((activity, index) => (
-                    <li
-                      key={index}
-                      className="flex justify-between items-center"
-                    >
+                    <li key={index} className="flex justify-between items-center">
                       {activity}
                       <button
                         type="button"
