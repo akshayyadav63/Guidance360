@@ -1,6 +1,8 @@
+/* eslint-disable react/no-unescaped-entities */
+/* eslint-disable no-unused-vars */
 import React, { useState } from "react";
 import Footer from "../Footer"; // Removed conflict markers
-
+import { Link, useNavigate } from "react-router-dom";
 const AcademicAssessmentForm = () => {
   const [formData, setFormData] = useState({
     name: "",
@@ -80,8 +82,8 @@ const AcademicAssessmentForm = () => {
           <h1 className="text-3xl font-bold text-center text-purple-600 mb-8 mt-5">
             "Step into your future! Fill out this form to unlock your academic journey and achieve your dreams."
           </h1>
-          <div className="p-8 max-w-4xl mx-auto bg-purple-600 text-white rounded-lg shadow-xl relative mt-10">
-            <h1 className="text-3xl font-bold mb-6 text-center animate-bounce">
+          <div className="p-8 max-w-4xl mx-auto bg-purple-200 text-black rounded-lg shadow-xl relative mt-10">
+            <h1 className="text-3xl  mb-6 text-center animate-bounce">
               Academic Assessment Form
             </h1>
             <form onSubmit={handleSubmit} className="space-y-8">
@@ -150,7 +152,7 @@ const AcademicAssessmentForm = () => {
                   <button
                     type="button"
                     onClick={addExtracurricular}
-                    className="ml-2 bg-yellow-500 text-white p-3 rounded-lg hover:bg-green-600 transition"
+                    className="ml-2 bg-yellow-500 text-white p-3 rounded-lg hover:bg-yellow-600 transition"
                   >
                     Add
                   </button>
@@ -185,7 +187,7 @@ const AcademicAssessmentForm = () => {
                   <button
                     type="button"
                     onClick={addSkill}
-                    className="ml-2 bg-yellow-500 text-white p-3 rounded-lg hover:bg-green-600 transition"
+                    className="ml-2 bg-yellow-500 text-white p-3 rounded-lg hover:bg-yellow-600 transition"
                   >
                     Add
                   </button>
@@ -209,9 +211,11 @@ const AcademicAssessmentForm = () => {
               {/* Submit Button */}
               <button
                 type="submit"
-                className="w-full bg-purple-800 text-white p-3 rounded-lg hover:bg-purple-700 transition"
+                className="w-full bg-purple-600 text-white p-3 rounded-lg hover:bg-purple-700 transition"
               >
-                Submit
+            <Link to="/assesment-home" className="text-white">
+            Submit
+          </Link>
               </button>
             </form>
           </div>

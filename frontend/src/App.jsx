@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 // App.js
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
@@ -13,6 +14,14 @@ import AcademicAssessmentForm from './Components/Form/form'; // Correct path // 
 import Form from './Components/Form/form'
 import Quiz from './components/career/careerQuestion'
 import Services from "./Components/Service";
+import ContactUs from "./Components/ContactUs";
+import CareerCounseling from "./Components/AssesmentHome";
+import SkillFront from "./Components/SkillFront";
+import SkillQuestions from "./Components/career/skillQuestions";
+import CareerDashboard from "./Components/CareerDasboar";
+import ResourceLibrary from "./Components/Resourse";
+
+
 
 function App() {
   return (
@@ -28,6 +37,12 @@ function App() {
           <Route path="/signup" element={<Signup />} />
           <Route path="/login" element={<Login />} />
           <Route path="/quiz" element={< Quiz />} />
+          <Route path="/assesment-home" element={<CareerCounseling />} />
+          <Route path="/skillfront" element={<SkillFront/>} />
+          <Route path="/skillquestion" element={<SkillQuestions />} />
+          <Route path="/dashboard" element={<CareerDashboard />} />
+          <Route path="/resource" element={<ResourceLibrary />} />
+
         </Routes>
       </Router>
     </UserProvider>

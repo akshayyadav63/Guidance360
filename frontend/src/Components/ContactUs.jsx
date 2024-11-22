@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React, { useState } from 'react';
 import { FaPhoneAlt, FaEnvelope } from 'react-icons/fa';
 import Bot from '../assets/images/CareerGPT_Bot.gif'; // Import the bot image

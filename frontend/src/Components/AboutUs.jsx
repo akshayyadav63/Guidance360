@@ -1,3 +1,6 @@
+/* eslint-disable react/no-unescaped-entities */
+/* eslint-disable react/no-unknown-property */
+/* eslint-disable no-unused-vars */
 import React from 'react';
 import Footer from './Footer';
 
