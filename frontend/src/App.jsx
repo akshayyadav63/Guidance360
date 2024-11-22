@@ -9,9 +9,10 @@ import Home from "./Components/Home";
 import Signup from "./Components/Signup";
 import Login from "./Components/Login";
 import AboutUs from "./Components/AboutUs";
-import AcademicAssessmentForm from './components/Form/form'; // Ensure the path is correct
-import Form from './components/Form/form'
+import AcademicAssessmentForm from './Components/Form/form'; // Correct path // Ensure the path is correct
+import Form from './Components/Form/form'
 import Quiz from './components/career/careerQuestion'
+import Services from "./Components/Service";
 
 function App() {
   return (
@@ -20,7 +21,7 @@ function App() {
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/services" element={<h1>Services Page</h1>} />
+          <Route path="/services" element={<Services/>} />
           <Route path="/about" element={<AboutUs />} />
           <Route path="/contact" element={<h1>Contact Us Page</h1>} />
           <Route path="/form" element={<AcademicAssessmentForm />} />
