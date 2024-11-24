@@ -9,6 +9,8 @@ CORS(app)  # Allow requests from the React frontend
 client = MongoClient("mongodb://localhost:27017/")
 db = client["signup_database"]
 users_collection = db["users"]
+assessments_collection = db["academic_assessments"]
+
 
 @app.route("/signup", methods=["POST"])
 def signup():
@@ -44,6 +46,47 @@ def login():
         return jsonify({"message": "Login successful!", "name": user["name"]}), 200
 
     return jsonify({"error": "Invalid email or password"}), 401
+
+
+
+
+
+
+
+@app.route("/submit-assessment", methods=["POST"])
+def submit_assessment():
+    # Get data from the request (from React form)
+    data = request.json
+
+    name = data.get("name")
+    gender = data.get("gender")
+    age = data.get("age")
+    education = data.get("education")
+    mcqAnswers = data.get("mcqAnswers")
+    writtenAnswer = data.get("writtenAnswer")
+    skills = data.get("skills")
+    extracurricular = data.get("extracurricular")
+
+    # Validate required fields
+    if not all([name, gender, age, education]):
+        return jsonify({"error": "Missing required fields"}), 400
+
+    # Insert the form data into MongoDB
+    assessment_data = {
+        "name": name,
+        "gender": gender,
+        "age": age,
+        "education": education,
+        "mcqAnswers": mcqAnswers,  # Optional
+        "writtenAnswer": writtenAnswer,  # Optional
+        "skills": skills,
+        "extracurricular": extracurricular
+    }
+
+    assessments_collection.insert_one(assessment_data)
+
+    return jsonify({"message": "Assessment submitted successfully!"}), 201
+
 
 
 if __name__ == "__main__":

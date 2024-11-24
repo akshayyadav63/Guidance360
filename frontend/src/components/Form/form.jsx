@@ -1,8 +1,10 @@
 /* eslint-disable react/no-unescaped-entities */
 /* eslint-disable no-unused-vars */
 import React, { useState } from "react";
-import Footer from "../Footer"; // Removed conflict markers
+import axios from "axios"; // Import Axios
+import Footer from "../Footer"; // Assuming this is the footer component
 import { Link, useNavigate } from "react-router-dom";
+
 const AcademicAssessmentForm = () => {
   const [formData, setFormData] = useState({
     name: "",
@@ -16,6 +18,8 @@ const AcademicAssessmentForm = () => {
     extracurricular: [],
     newExtracurricular: "",
   });
+  const [errorMessage, setErrorMessage] = useState(""); // For handling errors
+  const navigate = useNavigate(); // To redirect after successful submission
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -69,10 +73,22 @@ const AcademicAssessmentForm = () => {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(formData);
-    alert("Form Submitted Successfully!");
+    
+    try {
+      // Making POST request to backend
+      const response = await axios.post(
+        "http://localhost:5000/submit-assessment", // Replace with your Flask backend URL
+        formData
+      );
+      console.log(response.data); // Handle success response
+      alert("Form Submitted Successfully!");
+      navigate("/assesment-home"); // Navigate after successful form submission
+    } catch (error) {
+      console.error(error);
+      setErrorMessage("Error submitting the form. Please try again later.");
+    }
   };
 
   return (
@@ -83,10 +99,15 @@ const AcademicAssessmentForm = () => {
             "Step into your future! Fill out this form to unlock your academic journey and achieve your dreams."
           </h1>
           <div className="p-8 max-w-4xl mx-auto bg-purple-200 text-black rounded-lg shadow-xl relative mt-10">
-            <h1 className="text-3xl  mb-6 text-center animate-bounce">
+            <h1 className="text-3xl mb-6 text-center animate-bounce">
               Academic Assessment Form
             </h1>
             <form onSubmit={handleSubmit} className="space-y-8">
+              {errorMessage && (
+                <div className="bg-red-200 text-red-800 p-3 rounded-lg mb-4">
+                  {errorMessage}
+                </div>
+              )}
               <div>
                 <label className="block font-medium">Full Name</label>
                 <input
@@ -213,9 +234,7 @@ const AcademicAssessmentForm = () => {
                 type="submit"
                 className="w-full bg-purple-600 text-white p-3 rounded-lg hover:bg-purple-700 transition"
               >
-            <Link to="/assesment-home" className="text-white">
-            Submit
-          </Link>
+                Submit
               </button>
             </form>
           </div>
