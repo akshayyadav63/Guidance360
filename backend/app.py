@@ -53,32 +53,30 @@ def login():
 
 
 
-@app.route("/submit-assessment", methods=["POST"])
-def submit_assessment():
+@app.route("/submit-details", methods=["POST"])
+def submit_details():
     # Get data from the request (from React form)
     data = request.json
 
+    email = data.get("email")
     name = data.get("name")
     gender = data.get("gender")
     age = data.get("age")
     education = data.get("education")
-    mcqAnswers = data.get("mcqAnswers")
-    writtenAnswer = data.get("writtenAnswer")
     skills = data.get("skills")
     extracurricular = data.get("extracurricular")
 
     # Validate required fields
-    if not all([name, gender, age, education]):
+    if not all([email,name, gender, age, education]):
         return jsonify({"error": "Missing required fields"}), 400
 
     # Insert the form data into MongoDB
     assessment_data = {
+        "email": email,
         "name": name,
         "gender": gender,
         "age": age,
         "education": education,
-        "mcqAnswers": mcqAnswers,  # Optional
-        "writtenAnswer": writtenAnswer,  # Optional
         "skills": skills,
         "extracurricular": extracurricular
     }

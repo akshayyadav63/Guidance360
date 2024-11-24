@@ -1,18 +1,21 @@
 /* eslint-disable react/no-unescaped-entities */
 /* eslint-disable no-unused-vars */
-import React, { useState } from "react";
+import React, { useState,useContext } from "react";
 import axios from "axios"; // Import Axios
 import Footer from "../Footer"; // Assuming this is the footer component
 import { Link, useNavigate } from "react-router-dom";
+import { UserContext } from "../UserContext";
 
 const AcademicAssessmentForm = () => {
+
+  const email = useContext(UserContext);
+
   const [formData, setFormData] = useState({
+    email: email.userEmail,
     name: "",
     gender: "",
     age: "",
     education: "",
-    mcqAnswers: {},
-    writtenAnswer: "",
     skills: [],
     newSkill: "",
     extracurricular: [],
@@ -79,7 +82,7 @@ const AcademicAssessmentForm = () => {
     try {
       // Making POST request to backend
       const response = await axios.post(
-        "http://localhost:5000/submit-assessment", // Replace with your Flask backend URL
+        "http://localhost:5000/submit-details", // Replace with your Flask backend URL
         formData
       );
       console.log(response.data); // Handle success response
