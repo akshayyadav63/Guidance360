@@ -12,6 +12,7 @@ users_collection = db["users"]
 assessments_collection = db["academic_assessments"]
 
 
+#Signup API
 @app.route("/signup", methods=["POST"])
 def signup():
     # Get data from the request
@@ -34,6 +35,7 @@ def signup():
     return jsonify({"message": "User registered successfully!"}), 201
 
 
+#Login API
 @app.route("/login", methods=["POST"])
 def login():
     data = request.json
@@ -48,11 +50,7 @@ def login():
     return jsonify({"error": "Invalid email or password"}), 401
 
 
-
-
-
-
-
+#Form Details API
 @app.route("/submit-details", methods=["POST"])
 def submit_details():
     # Get data from the request (from React form)
