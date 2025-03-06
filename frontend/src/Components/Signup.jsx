@@ -12,7 +12,6 @@ export default function Signup() {
         name: "",
         email: "",
         password: "",
-        confirmPassword: "",
     });
 
     const [error, setError] = useState("");
@@ -28,15 +27,8 @@ export default function Signup() {
     const handleSubmit = async (e) => {
         e.preventDefault();
 
-        // Check for password match
-        if (formData.password !== formData.confirmPassword) {
-            setError("Passwords do not match!");
-            setSuccess("");
-            return;
-        }
-
         try {
-            const response = await axios.post("http://127.0.0.1:5000/signup", {
+            const response = await axios.post("http://localhost:5000/auth/signup", {
                 name: formData.name,
                 email: formData.email,
                 password: formData.password,
@@ -117,22 +109,6 @@ export default function Signup() {
                             className="w-full h-10 pl-8 pr-2 border-b border-gray-300 focus:outline-none focus:border-purple-500"
                             placeholder="Password"
                             minLength="8"
-                            required
-                        />
-                    </div>
-
-                    {/* Confirm Password Input */}
-                    <div className="relative mb-8">
-                        <span className="absolute left-2 top-1/2 transform -translate-y-1/2 text-lg text-gray-500">
-                            <i className="fa fa-lock"></i>
-                        </span>
-                        <input
-                            type="password"
-                            name="confirmPassword"
-                            value={formData.confirmPassword}
-                            onChange={handleChange}
-                            className="w-full h-10 pl-8 pr-2 border-b border-gray-300 focus:outline-none focus:border-purple-500"
-                            placeholder="Confirm Password"
                             required
                         />
                     </div>

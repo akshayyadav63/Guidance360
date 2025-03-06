@@ -82,7 +82,7 @@ const AcademicAssessmentForm = () => {
     try {
       // Making POST request to backend
       const response = await axios.post(
-        "http://localhost:5000/submit-details", // Replace with your Flask backend URL
+        "http://localhost:5000/form/submit-details", // Replace with your Flask backend URL
         formData
       );
       console.log(response.data); // Handle success response
